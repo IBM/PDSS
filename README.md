@@ -1,4 +1,5 @@
 # Property-driven localization and characterization in deep molecular representations
+[![DOI](https://zenodo.org/badge/943969596.svg)](https://doi.org/10.5281/zenodo.15001572)
 
 Representation learning via pre-trained deep learning models is emerging as an integral method for studying the molecular structure-property relationship, which is then leveraged to predict molecular properties or design new molecules with desired attributes.   
 We propose an unsupervised method to localize and characterize representations of pre-trained models through the lens of non-parametric property-driven subset scanning (PDSS), to improve the interpretability of deep molecular representations.
@@ -18,7 +19,7 @@ When we use the discovered property-driven elements as features for a new task, 
 
 ## Citation
 
-[![DOI](https://zenodo.org/badge/943969596.svg)](https://doi.org/10.5281/zenodo.15001572)
+TBD 
 
 ## Setup 
 
