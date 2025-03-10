@@ -4,8 +4,8 @@ Representation learning via pre-trained deep learning models is emerging as an i
 We propose an unsupervised method to localize and characterize representations of pre-trained models through the lens of non-parametric property-driven subset scanning (PDSS), to improve the interpretability of deep molecular representations.
 We assess its detection capabilities on diverse molecular benchmarks (ZINC-250K, MOSES, MoleculeNet, FlavorDB, M2OR) across predictive chemical language models (MoLFormer, ChemBERTa) and molecular graph generative models (GraphAF, GCPN). We further study how representations evolve due to domain adaptation, and we evaluate the usefulness of the extracted property-driven elements in the embeddings as lower-dimension representations for downstream tasks.  
 Experiments reveal notable information condensation in the pre-trained embeddings upon task-specific fine-tuning.
-For example, among the property-driven elements found in the embedding (out of $\approx 700$), only $11$ are shared between three distinct tasks (BACE, BBBP, and HIV), while $\approx 70$-$80$ of those are unique to each task. Similar patterns are found for flavor and odor detection tasks. 
-When we use the discovered property-driven elements as features for a new task, we find the same or improved performance ($3$ points up) while reducing the dimensions by $75\%$ without fine-tuning required, thus indicating information localization. 
+For example, among the property-driven elements found in the embedding (out of $\approx 700$), only $11$ are shared between three distinct tasks (BACE, BBBP, and HIV), while $\approx 70-80$ of those are unique to each task. Similar patterns are found for flavor and odor detection tasks. 
+When we use the discovered property-driven elements as features for a new task, we find the same or improved performance ($3$ points up) while reducing the dimensions by $75$% without fine-tuning required, thus indicating information localization. 
 
 
 ## Repo organization
