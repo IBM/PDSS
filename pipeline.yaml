@@ -1,0 +1,43 @@
+# executor: parallel
+# executor:
+#   dotted_path: ploomber.executors.Parallel
+#   processes: 2 # limit to a max of 2 processes
+  
+tasks:
+
+- source: tasks/load.py
+  product:
+    abnormal: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/abnormal.pkl
+    bg: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/bg.pkl
+    clean: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/clean.pkl
+    nb: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/load.ipynb
+  params:
+    model: '{{model}}'
+    dataset: '{{dataset}}'
+    size: '{{size}}'
+  papermill_params:
+      log_output: True
+
+- source: tasks/run_ss.py
+  product:
+    nb: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/runs_ss.ipynb
+    clean_output: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/clean_output.out
+    adv_output: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/adv_output.out
+    indices: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/indices.pkl
+  params: 
+    scoring: '{{scoring}}'
+    typerun: '{{typerun}}'
+  papermill_params:
+      log_output: True
+    
+- source: tasks/plot_results.py
+  product:
+    nb: output/{{model}}/{{dataset}}/{{typerun}}/{{scoring}}/plot_results.ipynb
+  params:
+    model: '{{model}}'
+    dataset: '{{dataset}}'
+    legendclean: '{{legendclean}}'
+    legendalt: '{{legendalt}}'
+  papermill_params: 
+    allow_nested_loop: True
+    log_output: True
