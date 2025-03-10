@@ -18,7 +18,7 @@ When we use the discovered property-driven elements as features for a new task, 
 
 ## Citation
 
-TBD
+[![DOI](https://zenodo.org/badge/943969596.svg)](https://doi.org/10.5281/zenodo.15001572)
 
 ## Setup 
 
